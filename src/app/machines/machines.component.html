@@ -1,0 +1,85 @@
+<div class="one" style="width: 100%;">
+  <div style="width: 50%; height: 100px; float: left; "> 
+    <mat-button-toggle-group #colorToggle="matButtonToggleGroup"
+    value="primary"
+    aria-label="Change color">
+<mat-button-toggle value="Fault View"> Fault View </mat-button-toggle>
+<mat-button-toggle value=" Asset View"> Asset View </mat-button-toggle>
+</mat-button-toggle-group>
+  </div>
+  <div style="margin-left: 50%; height: 100px; "> 
+      Right Div
+  </div>
+</div>
+
+
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  
+    <ng-container matColumnDef="serial">
+      <th mat-header-cell *matHeaderCellDef> SERIAL NO </th>
+      <td mat-cell *matCellDef="let element"> {{element.serial}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="esn">
+      <th mat-header-cell *matHeaderCellDef> ESN </th>
+      <td mat-cell *matCellDef="let element"> {{element.esn}} </td>
+    </ng-container>
+  
+  
+    <ng-container matColumnDef="enginemodel">
+      <th mat-header-cell *matHeaderCellDef> ENGINE MODEL  </th>
+      <td mat-cell *matCellDef="let element"> {{element.enginemodel}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef> Model </th>
+      <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="faultcode">
+        <th mat-header-cell *matHeaderCellDef> FAULT CODE </th>
+        <td mat-cell *matCellDef="let element"> {{element.faultcode}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CD">
+        <th mat-header-cell *matHeaderCellDef> CD </th>
+        <td mat-cell *matCellDef="let element"> {{element.CD}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="Date">
+        <th mat-header-cell *matHeaderCellDef> Date/Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="severity">
+        <th mat-header-cell *matHeaderCellDef> SEVERITY </th>
+        <td mat-cell *matCellDef="let element">  <button mat-raised-button color="warn">High</button></td>
+      </ng-container>
+
+      <ng-container matColumnDef="source">
+        <th mat-header-cell *matHeaderCellDef> SOURCE </th>
+        <td mat-cell *matCellDef="let element"> {{element.source}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="current">
+        <th mat-header-cell *matHeaderCellDef>   CURRENT HOUR METER </th>
+        <td mat-cell *matCellDef="let element"> {{element.current}} </td>
+      </ng-container>
+
+
+    
+
+  
+       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+       
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+   
+  </table>
+  
